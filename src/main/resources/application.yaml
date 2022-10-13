@@ -1,2 +1,7 @@
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
 server:
-    port: 8500
+  port:  8675
