@@ -73,3 +73,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+/daemon/
+/daemon/
+/daemon/
