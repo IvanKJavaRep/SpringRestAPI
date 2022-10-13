@@ -6,6 +6,10 @@ build/
 !**/src/test/**/build/
 caches/
 wrapper/
+daemon/7.5/daemon-2396.out.log
+daemon/7.5/registry.bin
+daemon/7.5/registry.bin.lock
+
 
 ### STS ###
 .apt_generated
