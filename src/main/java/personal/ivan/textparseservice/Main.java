@@ -7,7 +7,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import personal.ivan.textparseservice.restapi.Initializer;
 
 @SpringBootApplication
 public class Main implements CommandLineRunner {
