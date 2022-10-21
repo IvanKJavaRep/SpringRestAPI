@@ -1,7 +1,9 @@
 package personal.ivan.textparseservice.restapi;
 
+import org.apache.coyote.http11.HeadersTooLargeException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
@@ -16,4 +18,6 @@ public class MyControllerAdvice {
     public String requestHandlingNoHandlerFound(final NoHandlerFoundException ex) {
         return "There is no method with such name \n Status: 404";
     }
+
+
 }

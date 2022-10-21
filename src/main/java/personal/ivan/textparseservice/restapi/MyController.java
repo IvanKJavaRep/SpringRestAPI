@@ -40,4 +40,10 @@ public class MyController {
         return new MyDTO(Calendar.getInstance(), "Это ответ метода DELETE!");
     }
 
+    @RequestMapping(value = "/request-header-test", method = RequestMethod.POST)
+    @ResponseBody
+    public void testMaxHTTPHeaderSize(@RequestParam String token) {
+
+    }
+
 }

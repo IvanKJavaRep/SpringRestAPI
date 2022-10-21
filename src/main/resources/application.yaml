@@ -13,5 +13,8 @@ server:
   error:
     whitelabel:
       enabled: false
+  max-http-header-size: 400
+  connection-timeout: 5s
+
 
 
