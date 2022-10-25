@@ -1,7 +1,20 @@
 package personal.ivan.textparseservice;
 
+import lombok.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+@Value
 public class MyDTO {
-    int id;
+
+    @Id
+    @GeneratedValue
+    Integer id;
     String name;
     String address;
 

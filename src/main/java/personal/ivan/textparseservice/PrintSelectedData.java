@@ -9,7 +9,7 @@ public class PrintSelectedData {
     public void printAll(ResultSet res) {
         try {
             while (res.next()) {
-                System.out.println(res.getInt("id3"));
+                System.out.println(res.getInt("id"));
                 System.out.println(res.getString("name"));
                 System.out.println(res.getString("address"));
             }

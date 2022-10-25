@@ -11,16 +11,16 @@ import java.util.Map;
 public class InsertionClass {
     public SimpleJdbcInsert createInserter(DataSource dataSource) {
         SimpleJdbcInsert simpleJdbcInsert =
-                new SimpleJdbcInsert(dataSource).withTableName("table3");
+                new SimpleJdbcInsert(dataSource).withTableName("my_table");
         return simpleJdbcInsert;
     }
 
     public int addObj(MyDTO obj, DataSource dataSource) {
         SimpleJdbcInsert simpleJdbcInsert = createInserter(dataSource);
         Map<String, Object> parameters = new HashMap<String, Object>();
-        parameters.put("id3", obj.id);
-        parameters.put("name", obj.name);
-        parameters.put("address", obj.address);
+        parameters.put("id", obj.getId());
+        parameters.put("name", obj.getName());
+        parameters.put("address", obj.getAddress());
 
         return simpleJdbcInsert.execute(parameters);
     }
