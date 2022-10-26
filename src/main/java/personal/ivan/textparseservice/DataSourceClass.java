@@ -5,8 +5,10 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
@@ -30,6 +32,7 @@ public class DataSourceClass {
         return new DataSourceProperties();
     }
 
+    @Primary
     @Bean(name = "testSource")
     public DataSource testDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -40,5 +43,6 @@ public class DataSourceClass {
         dataSource.setUrl(properties.getUrl());
         return dataSource;
     }
+
 
 }

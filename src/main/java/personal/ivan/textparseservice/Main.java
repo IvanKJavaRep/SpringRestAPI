@@ -5,7 +5,13 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -13,7 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
+@ComponentScan("personal.ivan.textparseservice")
 public class Main implements CommandLineRunner {
+
 
     @Autowired
     @Qualifier("testSource")
@@ -26,8 +34,8 @@ public class Main implements CommandLineRunner {
     @Qualifier("hardcodeSource")
     private DataSource hardcodeDataSource;
 
-    /*@Autowired
-    private studentRepository repo;*/
+    @Autowired
+    private studentRepository repo;
 
 
     @Autowired
@@ -65,7 +73,7 @@ public class Main implements CommandLineRunner {
         System.out.println(lst.size());
         // simple insertion into table3 of my localhost database
         MyDTO obj = new MyDTO(34, "ivan", "moscow");
-        //insertionClass.addObj(obj, dataSource);
+        //insertionClass.addObj(obj, testDataSource);
         DeleteClass.delete(20, statement);
         // add 3 lines into database with batchUpdate
         batchUpdate.update(testDataSource);
@@ -74,6 +82,10 @@ public class Main implements CommandLineRunner {
         list.add(obj);
         list.add(obj);
         batchUpdate.updateWithPreparedStatement(testDataSource, list);
+        for(MyDTO st : repo.findByidLessThanEqual(100))
+        {
+            System.out.println(st.getId());
+        }
 
     }
 }

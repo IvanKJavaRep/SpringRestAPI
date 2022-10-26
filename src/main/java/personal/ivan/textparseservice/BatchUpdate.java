@@ -43,12 +43,10 @@ public class BatchUpdate {
                         ps.setString(2, user.getName());
                         ps.setString(3, user.getAddress());
                     }
-
                     @Override
                     public int getBatchSize() {
-                        return 2;
+                        return lst.size();
                     }
                 });
-
     }
 }

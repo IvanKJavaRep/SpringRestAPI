@@ -3,10 +3,17 @@ package personal.ivan.textparseservice;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-/*@Repository
-public interface studentRepository extends CrudRepository<MyDTO, Long> {
+import javax.persistence.criteria.CriteriaBuilder;
+import java.util.List;
+import java.util.Optional;
 
-}*/
+@Repository
+public interface studentRepository extends CrudRepository<MyDTO, Integer> {
 
-/*MyDTO obj = new MyDTO(1,"a","b");
-        obj = repo.save(obj);*/
+    public Optional<MyDTO> findById(Integer id);
+
+    public List<MyDTO> findByidLessThanEqual(Integer id);
+
+
+}
+

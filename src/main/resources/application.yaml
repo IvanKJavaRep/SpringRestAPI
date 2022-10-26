@@ -8,6 +8,10 @@ spring:
       username: ivan
       password: ivan
       driverClassName: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
 
 
 server:
