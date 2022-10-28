@@ -1,27 +1,18 @@
 package personal.ivan.textparseservice;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 @SpringBootApplication
 @ComponentScan("personal.ivan.textparseservice")
 public class Main implements CommandLineRunner {
-
 
     @Autowired
     @Qualifier("testSource")
@@ -35,57 +26,21 @@ public class Main implements CommandLineRunner {
     private DataSource hardcodeDataSource;
 
     @Autowired
-    private studentRepository repo;
-
+    private IMyDTORepository repo;
 
     @Autowired
     private Config config;
 
-    @Autowired
-    private PrintSelectedData printSelectedData;
-    @Autowired
-    private ConverterToDTO converterToDTO;
-
-    @Autowired
-    private InsertionClass insertionClass;
-
-
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
-
-
     }
-
 
     @Override
     public void run(String... strings) throws Exception {
-        System.out.println(config);
-        // create datasource
-        Statement statement = testDataSource.getConnection().createStatement();
-        // create query
-        String command = "SELECT * FROM my_table ";
-        // return all selected data
-        ResultSet res = statement.executeQuery(command);
-        // print all selected objects
-        printSelectedData.printAll(res);
-        // mapping all to DTO
-        List<MyDTO> lst = converterToDTO.convert(res);
-        System.out.println(lst.size());
-        // simple insertion into table3 of my localhost database
-        MyDTO obj = new MyDTO(34, "ivan", "moscow");
-        //insertionClass.addObj(obj, testDataSource);
-        DeleteClass.delete(20, statement);
-        // add 3 lines into database with batchUpdate
-        batchUpdate.update(testDataSource);
-        batchUpdate.updateWithArray(testDataSource);
-        List<MyDTO> list = new ArrayList<>();
-        list.add(obj);
-        list.add(obj);
-        batchUpdate.updateWithPreparedStatement(testDataSource, list);
-        for(MyDTO st : repo.findByidLessThanEqual(100))
-        {
-            System.out.println(st.getId());
-        }
-
+        repo.save(new MyDTO());
+        repo.save(new MyDTO());
+        MyDTO myDTO = new MyDTO();
+        ObjectMapper mapper = new ObjectMapper();
+        System.out.println(mapper.writeValueAsString(myDTO));
     }
 }

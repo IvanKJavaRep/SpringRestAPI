@@ -1,25 +1,34 @@
 package personal.ivan.textparseservice;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Value;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.io.Serializable;
+import java.util.UUID;
+
 
 @Entity
-//@Value
+@Getter
+@Setter
+@SuperBuilder
+@NoArgsConstructor
 @Table(name = "my_table")
+
 public class MyDTO implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "attSeq")
+    @SequenceGenerator(
+            name = "attSeq",
+            sequenceName = "attendance_seq",
+            allocationSize = 1
+    )
     @Column(name = "id")
     Integer id;
     @Column(name = "name")
+    @JsonProperty("object_name")
     String name;
     @Column(name = "address")
     String address;
@@ -30,21 +39,10 @@ public class MyDTO implements Serializable {
         this.name = name;
         this.address = address;
     }
-    public MyDTO()
-    {
-        super();
-    }
-    public Integer getId()
-    {
-        return id;
-    }
-    public String getName()
-    {
-        return name;
-    }
-    public String getAddress()
-    {
-        return address;
-    }
 
+    @PrePersist
+    void prePersist() {
+        name = UUID.randomUUID().toString();
+        address = UUID.randomUUID().toString();
+    }
 }
