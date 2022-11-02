@@ -13,6 +13,19 @@ spring:
     hibernate:
       ddl-auto: update
 
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+
 
 server:
-  port:  8675
+  port: 8675
+  error:
+    whitelabel:
+      enabled: false
+  max-http-header-size: 400
+  connection-timeout: 5s
+
+
+
