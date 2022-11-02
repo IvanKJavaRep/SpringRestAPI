@@ -21,11 +21,5 @@ public interface IMyDTORepository extends JpaRepository<MyDTO, Integer> {
     @Query("SELECT myDTO from MyDTO myDTO WHERE myDTO.name = ?1"  )
     public  List<MyDTO> findByName(String name);
 
-
-
-
-
-
-
 }
 
