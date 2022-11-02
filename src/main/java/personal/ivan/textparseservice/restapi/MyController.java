@@ -1,21 +1,25 @@
 package personal.ivan.textparseservice.restapi;
 
-import org.springframework.http.HttpStatus;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import personal.ivan.textparseservice.data.IMyDTORepository;
+import personal.ivan.textparseservice.data.MyDTO;
 
-import java.util.Calendar;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value = "/myservice")
 public class MyController {
 
+    @Autowired
+    IMyDTORepository repo;
 
 
-    @RequestMapping(value = "/get/{time}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public MyDTO getMyData(@PathVariable long time) {
-        return new MyDTO(Calendar.getInstance(), "Это ответ метода GET!");
+    public Optional<MyDTO> getMyData(@PathVariable int id) {
+        return repo.findById(id);
     }
 
 
@@ -28,16 +32,15 @@ public class MyController {
 
     @RequestMapping(value = "/post", method = RequestMethod.POST)
     @ResponseBody
-    public MyDTO postMyData(@RequestParam String phrase) {
-        return new MyDTO(Calendar.getInstance(), "это ответ метода POST: переданный " +
-                "параметр равен " + phrase);
+    public MyDTO postMyData(@RequestParam int id) {
+        return repo.getReferenceById(id);
     }
 
 
-    @RequestMapping(value = "/delete/{time}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    public MyDTO deleteMyData(@PathVariable long time) {
-        return new MyDTO(Calendar.getInstance(), "Это ответ метода DELETE!");
+    public MyDTO deleteMyData(@PathVariable int id) {
+        return repo.getReferenceById(id);
     }
 
     @RequestMapping(value = "/request-header-test", method = RequestMethod.POST)

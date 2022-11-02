@@ -1,17 +1,15 @@
-package personal.ivan.textparseservice;
+package personal.ivan.textparseservice.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+import personal.ivan.textparseservice.data.MyDTO;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface IMyDTORepository extends JpaRepository<MyDTO, Integer> {
 
-    public Optional<MyDTO> findById(Integer id);
 
     public List<MyDTO> findByidLessThanEqual(Integer id);
 

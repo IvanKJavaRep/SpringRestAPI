@@ -7,6 +7,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import personal.ivan.textparseservice.data.BatchUpdate;
+import personal.ivan.textparseservice.data.IMyDTORepository;
+import personal.ivan.textparseservice.data.MyDTO;
+import personal.ivan.textparseservice.restapi.Config;
 
 import javax.sql.DataSource;
 
@@ -39,7 +43,7 @@ public class Main implements CommandLineRunner {
     public void run(String... strings) throws Exception {
         //repo.save(new MyDTO());
         //repo.save(new MyDTO());
-        repo.deleteById(10);
+        //repo.deleteById(10);
         MyDTO myDTO = new MyDTO();
         ObjectMapper mapper = new ObjectMapper();
         System.out.println(mapper.writeValueAsString(myDTO));

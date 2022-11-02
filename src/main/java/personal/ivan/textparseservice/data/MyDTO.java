@@ -1,4 +1,4 @@
-package personal.ivan.textparseservice;
+package personal.ivan.textparseservice.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
