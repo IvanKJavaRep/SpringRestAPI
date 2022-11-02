@@ -44,8 +44,8 @@ public class Main implements CommandLineRunner {
         //repo.save(new MyDTO());
         //repo.save(new MyDTO());
         //repo.deleteById(10);
-        MyDTO myDTO = new MyDTO();
+       /* MyDTO myDTO = new MyDTO();
         ObjectMapper mapper = new ObjectMapper();
-        System.out.println(mapper.writeValueAsString(myDTO));
+        System.out.println(mapper.writeValueAsString(myDTO));*/
     }
 }

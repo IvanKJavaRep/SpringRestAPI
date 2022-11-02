@@ -25,28 +25,30 @@ public class MyController {
 
     @RequestMapping(value = "/put", method = RequestMethod.PUT)
     @ResponseBody
-    public MyDTO putMyData(@RequestBody MyDTO md) {
-        return md;
+    public void putMyData(@RequestParam int id) {
+        var obj = repo.findById(id).get();
+        obj.setAddress("llll");
+        repo.save(obj);
     }
 
 
     @RequestMapping(value = "/post", method = RequestMethod.POST)
     @ResponseBody
-    public MyDTO postMyData(@RequestParam int id) {
-        return repo.getReferenceById(id);
+    public void postMyData(@RequestBody MyDTO md) {
+        System.out.println(md.getId());
+        repo.save(md);
     }
 
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    public MyDTO deleteMyData(@PathVariable int id) {
-        return repo.getReferenceById(id);
+    public void deleteMyData(@PathVariable int id) {
+        repo.deleteById(id);
     }
 
     @RequestMapping(value = "/request-header-test", method = RequestMethod.POST)
     @ResponseBody
     public void testMaxHTTPHeaderSize(@RequestParam String token) {
-
     }
 
 }
