@@ -2,6 +2,17 @@ spring:
   autoconfigure:
     exclude:
       - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  datasource:
+    test:
+      url: jdbc:postgresql://localhost:5432/testbase
+      username: ivan
+      password: ivan
+      driverClassName: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
   mvc:
     throw-exception-if-no-handler-found: true
   resources:
