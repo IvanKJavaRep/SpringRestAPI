@@ -1,4 +1,4 @@
-package personal.ivan.textparseservice.restapi;
+package personal.ivan.textparseservice.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

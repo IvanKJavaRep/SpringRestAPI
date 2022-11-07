@@ -1,6 +1,5 @@
 package personal.ivan.textparseservice;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
@@ -9,8 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import personal.ivan.textparseservice.data.BatchUpdate;
 import personal.ivan.textparseservice.data.IMyDTORepository;
-import personal.ivan.textparseservice.data.MyDTO;
-import personal.ivan.textparseservice.restapi.Config;
+import personal.ivan.textparseservice.config.Config;
 
 import javax.sql.DataSource;
 

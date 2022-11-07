@@ -3,7 +3,7 @@ package personal.ivan.textparseservice.data;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import personal.ivan.textparseservice.data.MyDTO;
+import personal.ivan.textparseservice.dao.entity.MyTableEntity;
 
 import javax.sql.DataSource;
 import java.sql.PreparedStatement;
@@ -32,14 +32,14 @@ public class BatchUpdate {
         template.batchUpdate(sqlArray);
     }
 
-    void updateWithPreparedStatement(DataSource dataSource, List<MyDTO> lst) {
+    void updateWithPreparedStatement(DataSource dataSource, List<MyTableEntity> lst) {
         String sql = "INSERT INTO my_table (id, name, address) VALUES (?, ?, ?)";
         JdbcTemplate template = new JdbcTemplate(dataSource);
         template.batchUpdate(sql,
                 new BatchPreparedStatementSetter() {
                     @Override
                     public void setValues(PreparedStatement ps, int i) throws SQLException {
-                        MyDTO user = lst.get(i);
+                        MyTableEntity user = lst.get(i);
                         ps.setInt(1, user.getId());
                         ps.setString(2, user.getName());
                         ps.setString(3, user.getAddress());
