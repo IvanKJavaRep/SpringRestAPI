@@ -46,6 +46,21 @@ public class MyController {
     public void deleteMyData(@PathVariable int id) {
         myTableService.deleteEntity(id);
     }
+    @RequestMapping(value = "/transaction/fail", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void transactionFailTest() {
+        myTableService.transactionFailTest();
+    }
+    @RequestMapping(value = "/transaction", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void transactionTest() {
+        myTableService.transactionTest();
+    }
+    @RequestMapping(value = "/transaction/norollback", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void transactionNoRollBackTest() {
+        myTableService.getEntities();
+    }
 
     @RequestMapping(value = "/request-header-test", method = RequestMethod.POST)
     @ResponseBody
