@@ -12,19 +12,20 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-
   mvc:
     throw-exception-if-no-handler-found: true
-  resources:
-    add-mappings: false
 
+jwt:
+  secret:
+    access: qBTmv4oXFFR2GwjexDJ4t6fsIUIUhhXqlktXjXdkcyygs8nPVEwMfo29VDRRepYDVV5IkIxBMzr7OEHXEHd37w==
+    refresh: zL1HB3Pch05Avfynovxrf/kpF9O2m4NCWKJUjEp27s9J2jEG3ifiKCGylaZ8fDeoONSTJP/wAzKawB8F9rOMNg==
 
 server:
   port: 8675
   error:
     whitelabel:
       enabled: false
-  max-http-header-size: 400
+  max-http-header-size: 4000
   connection-timeout: 5s
 
 
