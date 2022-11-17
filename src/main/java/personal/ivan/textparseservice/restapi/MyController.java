@@ -1,13 +1,21 @@
 package personal.ivan.textparseservice.restapi;
 
-import org.springframework.http.HttpStatus;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
+import personal.ivan.textparseservice.security.AuthService;
+import personal.ivan.textparseservice.security.JWTRequest;
+import personal.ivan.textparseservice.security.JWTResponse;
 
 import java.util.Calendar;
 
 @Controller
 @RequestMapping(value = "/myservice")
+@RequiredArgsConstructor
 public class MyController {
 
 
@@ -34,16 +42,24 @@ public class MyController {
     }
 
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/delete/{time}", method = RequestMethod.DELETE)
     @ResponseBody
     public MyDTO deleteMyData(@PathVariable long time) {
         return new MyDTO(Calendar.getInstance(), "Это ответ метода DELETE!");
     }
 
-    @RequestMapping(value = "/request-header-test", method = RequestMethod.POST)
-    @ResponseBody
-    public void testMaxHTTPHeaderSize(@RequestParam String token) {
 
+    /*@RequestMapping(value = "/registration")
+    public String testMaxHTTPHeaderSize(WebRequest request, Model model) {
+        UserDto userDto = new UserDto();
+        model.addAttribute("user", userDto);
+        return "registration";
+    }*/
+    private final AuthService authService;
+    @PostMapping("/login")
+    public ResponseEntity<JWTResponse> login(@RequestBody JWTRequest authRequest) {
+        final JWTResponse token = authService.login(authRequest);
+        return ResponseEntity.ok(token);
     }
-
 }
