@@ -3,12 +3,9 @@ package personal.ivan.textparseservice.restapi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import personal.ivan.textparseservice.data.IMyDTORepository;
 import personal.ivan.textparseservice.dao.entity.MyTableEntity;
 import personal.ivan.textparseservice.restapi.dto.MyDTO;
 import personal.ivan.textparseservice.service.MyTableService;
-
-import java.util.Optional;
 
 @Controller
 @RequestMapping(value = "/myservice")
@@ -46,20 +43,23 @@ public class MyController {
     public void deleteMyData(@PathVariable int id) {
         myTableService.deleteEntity(id);
     }
+
     @RequestMapping(value = "/transaction/fail", method = RequestMethod.DELETE)
     @ResponseBody
-    public void transactionFailTest() {
-        myTableService.transactionFailTest();
+    public void transactionFail() {
+        myTableService.transactionFail();
     }
+
     @RequestMapping(value = "/transaction", method = RequestMethod.DELETE)
     @ResponseBody
-    public void transactionTest() {
-        myTableService.transactionTest();
+    public void transactionNoRollback() {
+        myTableService.transaction();
     }
+
     @RequestMapping(value = "/transaction/norollback", method = RequestMethod.DELETE)
     @ResponseBody
-    public void transactionNoRollBackTest() {
-        myTableService.getEntities();
+    public void transactionNoRollBack() {
+        myTableService.getUndefinedObj();
     }
 
     @RequestMapping(value = "/request-header-test", method = RequestMethod.POST)
