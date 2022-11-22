@@ -1,4 +1,4 @@
-package personal.ivan.textparseservice;
+package personal.ivan.textparseservice.data;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;

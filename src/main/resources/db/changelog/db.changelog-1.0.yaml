@@ -1,0 +1,30 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 2
+      author: ivan
+      changes:
+        - createTable:
+            tableName: changelog-1
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: firstname
+                  type: varchar(50)
+              - column:
+                  name: lastname
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: state
+                  type: char(2)
+      rollback:
+        - sql:
+            sql: DROP TABLE changelog-1;
