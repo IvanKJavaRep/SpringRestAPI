@@ -1,24 +1,24 @@
-logBefore execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-23 13:53:15.558
-logAfter execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-23 13:53:15.725
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+logException No value present
 
-logBefore execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-23 13:53:18.156
-logAfter execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-23 13:53:18.231
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+logException No value present
 
-logBefore execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-23 13:53:18.853
-logAfter execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-23 13:53:18.907
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-26 12:17:19.031 110
 
-logBefore execution(void personal.ivan.textparseservice.restapi.controller.MyController.transactionFail()) 2022-11-23 13:53:29.408
-logException execution(void personal.ivan.textparseservice.restapi.controller.MyController.transactionFail()) 2022-11-23 13:53:29.509
-logAfter execution(void personal.ivan.textparseservice.restapi.controller.MyController.transactionFail()) 2022-11-23 13:53:29.515
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-26 12:17:19.815 94
 
-logBefore execution(void personal.ivan.textparseservice.restapi.controller.MyController.transactionFail()) 2022-11-23 13:53:31.296
-logException execution(void personal.ivan.textparseservice.restapi.controller.MyController.transactionFail()) 2022-11-23 13:53:31.489
-logAfter execution(void personal.ivan.textparseservice.restapi.controller.MyController.transactionFail()) 2022-11-23 13:53:31.489
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-26 12:17:20.448 201
 
-logBefore execution(void personal.ivan.textparseservice.restapi.controller.MyController.transactionFail()) 2022-11-23 13:53:32.496
-logException execution(void personal.ivan.textparseservice.restapi.controller.MyController.transactionFail()) 2022-11-23 13:53:32.567
-logAfter execution(void personal.ivan.textparseservice.restapi.controller.MyController.transactionFail()) 2022-11-23 13:53:32.567
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-26 12:17:21.328 59
 
-logBefore execution(void personal.ivan.textparseservice.restapi.controller.MyController.transactionNoRollback()) 2022-11-23 14:05:08.291
-logAfter execution(void personal.ivan.textparseservice.restapi.controller.MyController.transactionNoRollback()) 2022-11-23 14:05:08.495
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-26 12:17:21.76 85
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+logException No value present
 
