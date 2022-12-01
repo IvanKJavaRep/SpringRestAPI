@@ -1,24 +1,37 @@
 Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
-logException No value present
+log exception with args: 22
+WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-01 16:21:59.248 209
 
 Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
-logException No value present
+log exception with args: 22
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-01 16:22:00.433 57
 
 Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
-WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-26 12:17:19.031 110
+log exception with args: 22
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-01 16:22:01.002 95
 
 Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
-method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-26 12:17:19.815 94
+log exception with args: 22
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-01 16:22:01.702 73
 
 Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
-WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-26 12:17:20.448 201
+log exception with args: 22
+WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-01 16:22:02.373 208
 
 Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
-method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-26 12:17:21.328 59
+WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-01 16:22:05.265 101
 
 Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
-method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-11-26 12:17:21.76 85
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-01 16:22:05.851 57
 
 Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
-logException No value present
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-01 16:22:07.996 86
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 23
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-01 16:22:11.094 96
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 23
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-01 16:22:11.645 46
 
