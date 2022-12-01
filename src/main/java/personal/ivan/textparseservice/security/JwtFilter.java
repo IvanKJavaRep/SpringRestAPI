@@ -3,6 +3,9 @@ package personal.ivan.textparseservice.security;
 import io.jsonwebtoken.Claims;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.coyote.Response;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -13,7 +16,9 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @Slf4j
 @Component
@@ -33,9 +38,16 @@ public class JwtFilter extends GenericFilterBean {
             final JwtAuthentication jwtInfoToken = JwtUtils.generate(claims);
             jwtInfoToken.setAuthenticated(true);
             SecurityContextHolder.getContext().setAuthentication(jwtInfoToken);
+        } else {
+            String url = ((HttpServletRequest) request).getRequestURL().toString();
+            if (!("http://localhost:8675/api/auth/login".equals(url) || url.equals("http://localhost:8675/api/auth/token"))) {
+                ((HttpServletResponse) response).setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                return;
+            }
         }
         fc.doFilter(request, response);
     }
+
 
     private String getTokenFromRequest(HttpServletRequest request) {
         final String bearer = request.getHeader(AUTHORIZATION);
@@ -44,5 +56,6 @@ public class JwtFilter extends GenericFilterBean {
         }
         return null;
     }
+
 
 }

@@ -18,5 +18,6 @@ public class User {
     private String firstName;
     private String lastName;
     private Set<Role> roles;
+    private String email;
 
 }

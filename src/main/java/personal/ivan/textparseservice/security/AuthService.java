@@ -1,14 +1,21 @@
 package personal.ivan.textparseservice.security;
+
 import io.jsonwebtoken.Claims;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.security.auth.message.AuthException;
+import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
+import java.util.UUID;
+
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -64,6 +71,15 @@ public class AuthService {
         }
         throw new AuthException("Невалидный JWT токен");
     }
+    /*@SneakyThrows
+    public HttpStatus reset(@RequestParam("email") String userEmail) {
+        Optional<User> user = userService.getByLogin(userEmail);
+        if (user == null) {
+            throw new InvalidParameterException();
+        }
+        String token = UUID.randomUUID().toString();
+
+    }*/
 
     public JwtAuthentication getAuthInfo() {
         return (JwtAuthentication) SecurityContextHolder.getContext().getAuthentication();

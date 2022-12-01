@@ -29,5 +29,11 @@ public class AuthController {
         final JWTResponse token = authService.refresh(request.getRefreshToken());
         return ResponseEntity.ok(token);
     }
+    /*@PostMapping("reset")
+    public String getResetToken(@RequestParam("email") String userEmail)
+    {
+        authService.reset(userEmail);
+    }*/
+
 
 }

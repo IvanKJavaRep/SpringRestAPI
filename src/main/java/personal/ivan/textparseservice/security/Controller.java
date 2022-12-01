@@ -14,6 +14,7 @@ public class Controller {
 
     private final AuthService authService;
 
+
     @PreAuthorize("hasAuthority('USER')")
     @GetMapping("hello/user")
     public ResponseEntity<String> helloUser() {
