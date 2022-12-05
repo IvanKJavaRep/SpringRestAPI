@@ -6,7 +6,6 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.UUID;
 
 @Builder
 @Entity
@@ -35,20 +34,20 @@ public class MyTableEntity implements Serializable {
     Timestamp creationTime = null;
     @Column(name = "update_time")
     Timestamp updateTime = null;
+    String status;
 
-    public MyTableEntity(int id, String name, String address, Timestamp creation , Timestamp update) {
+    public MyTableEntity(int id, String name, String address, Timestamp creation, Timestamp update, String status) {
         super();
         this.id = id;
         this.name = name;
         this.address = address;
+        this.status = status;
         creationTime = creation;
-        updateTime= update;
+        updateTime = update;
     }
 
     @PrePersist
     void prePersist() {
-        name = UUID.randomUUID().toString();
-        address = UUID.randomUUID().toString();
         java.util.Date date = new java.util.Date();
         creationTime = new Timestamp(date.getTime());
         updateTime = new Timestamp(date.getTime());

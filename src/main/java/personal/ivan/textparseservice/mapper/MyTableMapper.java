@@ -12,8 +12,7 @@ public class MyTableMapper {
                 .id(myDTO.getId())
                 .name(myDTO.getName())
                 .address(myDTO.getAddress())
-                .creationTime(null)
-                .updateTime(null)
+                .status(myDTO.getStatus())
                 .build();
     }
 }

@@ -1,0 +1,12 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 2
+      author: ivan
+      changes:
+        - addColumn:
+            tableName: table_with_time
+            columns:
+              - column:
+                  name: status
+                  type: varchar
