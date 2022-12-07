@@ -3,7 +3,9 @@ package personal.ivan.textparseservice.restapi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import personal.ivan.textparseservice.dao.MyTableDao;
 import personal.ivan.textparseservice.dao.entity.MyTableEntity;
+import personal.ivan.textparseservice.data.IMyDTORepository;
 import personal.ivan.textparseservice.restapi.dto.MyDTO;
 import personal.ivan.textparseservice.service.MyTableService;
 
@@ -14,6 +16,8 @@ public class MyController {
 
     @Autowired
     MyTableService myTableService;
+    @Autowired
+    MyTableDao myTableDao;
 
 
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)

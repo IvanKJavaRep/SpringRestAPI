@@ -35,14 +35,17 @@ public class MyTableEntity implements Serializable {
     Timestamp creationTime = null;
     @Column(name = "update_time")
     Timestamp updateTime = null;
+    String status;
 
-    public MyTableEntity(int id, String name, String address, Timestamp creation , Timestamp update) {
+    public MyTableEntity(int id, String name, String address, Timestamp creation, Timestamp update, String status) {
         super();
         this.id = id;
         this.name = name;
         this.address = address;
+        this.status = status;
         creationTime = creation;
-        updateTime= update;
+        updateTime = update;
+
     }
 
     @PrePersist

@@ -25,12 +25,14 @@ public class MyDTO implements Serializable {
     String name;
 
     String address;
+    String status;
 
-    public MyDTO(int id, String name, String address) {
+    public MyDTO(int id, String name, String address, String status) {
         super();
         this.id = id;
         this.name = name;
         this.address = address;
+        this.status = status;
     }
 
 }

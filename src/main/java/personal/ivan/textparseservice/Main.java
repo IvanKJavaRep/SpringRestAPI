@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import personal.ivan.textparseservice.data.BatchUpdate;
@@ -15,6 +16,7 @@ import javax.sql.DataSource;
 
 @SpringBootApplication
 @ComponentScan("personal.ivan.textparseservice")
+@EnableCaching
 public class Main implements CommandLineRunner {
 
     @Autowired
