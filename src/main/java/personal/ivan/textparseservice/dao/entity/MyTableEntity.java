@@ -1,17 +1,21 @@
 package personal.ivan.textparseservice.dao.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import liquibase.pro.packaged.E;
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Builder
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "table_with_time")
 
 public class MyTableEntity implements Serializable {
@@ -34,28 +38,32 @@ public class MyTableEntity implements Serializable {
     Timestamp creationTime = null;
     @Column(name = "update_time")
     Timestamp updateTime = null;
-    String status;
+    @Enumerated(EnumType.STRING)
+    Status status;
+
 
     public MyTableEntity(int id, String name, String address, Timestamp creation, Timestamp update, String status) {
+
         super();
+        System.out.println(status);
         this.id = id;
         this.name = name;
         this.address = address;
-        this.status = status;
+        this.status = Status.valueOf(status);
         creationTime = creation;
         updateTime = update;
     }
 
     @PrePersist
     void prePersist() {
-        java.util.Date date = new java.util.Date();
-        creationTime = new Timestamp(date.getTime());
-        updateTime = new Timestamp(date.getTime());
+        LocalDateTime date = LocalDateTime.now();
+        creationTime = Timestamp.valueOf(date);
+        updateTime = Timestamp.valueOf(date);
     }
 
     @PreUpdate
     void preUpdate() {
-        java.util.Date date = new java.util.Date();
-        updateTime = new Timestamp(date.getTime());
+        LocalDateTime date = LocalDateTime.now();
+        updateTime = Timestamp.valueOf(date);
     }
 }

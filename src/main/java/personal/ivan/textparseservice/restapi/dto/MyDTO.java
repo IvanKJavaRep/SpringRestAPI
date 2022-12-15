@@ -25,7 +25,7 @@ public class MyDTO implements Serializable {
     String name;
 
     String address;
-    String status;
+    String status = "in_progress";
 
     public MyDTO(int id, String name, String address, String status) {
         super();

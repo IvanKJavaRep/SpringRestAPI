@@ -1,6 +1,4 @@
 databaseChangeLog:
   - include:
-      file: classpath:db/changelog/db.changelog-table_with_time.yaml
-  - include:
       file: classpath:db/changelog/db.changelog-1.0.yaml
 
