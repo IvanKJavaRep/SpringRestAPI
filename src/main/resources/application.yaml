@@ -22,6 +22,18 @@ spring:
     throw-exception-if-no-handler-found: true
   resources:
     add-mappings: false
+  kafka:
+    consumer:
+      # bootstrap-servers: localhost:8081
+      # group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+    producer:
+      # bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
 
 server:
@@ -31,6 +43,5 @@ server:
       enabled: false
   max-http-header-size: 400
   connection-timeout: 5s
-
 
 
