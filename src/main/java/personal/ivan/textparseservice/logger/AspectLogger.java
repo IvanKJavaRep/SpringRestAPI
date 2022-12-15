@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import java.io.FileWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @Component
 @Aspect
@@ -21,7 +22,16 @@ public class AspectLogger {
             try {
                 res = joinPoint.proceed();
             } catch (Throwable ex) {
-                writer.write("log exception with args: " + joinPoint.getArgs()[0].toString() + "\n");
+                String output = "log exception with args: ";
+                for (var el :
+                        joinPoint.getArgs()) {
+                    if (el instanceof List<?>) {
+                        output += "List size: " + ((List<?>) el).size();
+                    } else {
+                        output += el;
+                    }
+                }
+                writer.write(output + "\n");
             }
             long afterExecution = System.currentTimeMillis();
             long result = afterExecution - beforeExecution;
