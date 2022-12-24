@@ -23,25 +23,32 @@ spring:
   resources:
     add-mappings: false
   kafka:
-    consumer:
-      # bootstrap-servers: localhost:8081
-      # group-id: group_id
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-
+    bootstrap-servers: ${SMEV3GATE_ADAPTER_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     producer:
-      # bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-
+      properties:
+        delivery.timeout.ms: ${SMEV3GATE_ADAPTER_KAFKA_DELIVERY_TIMEOUT_MS:120000}
+        max.request.size: ${SMEV3GATE_ADAPTER_KAFKA_PRODUCER_MAX_REQUEST_SIZE_BYTES:73400320}
+        max.request.size.bytes: ${SMEV3GATE_ADAPTER_KAFKA_PRODUCER_MAX_REQUEST_SIZE_BYTES:73400320}
+    listener:
+      ack-mode: manual_immediate
+      idle-event-interval: 1m
+    consumer:
+      group-id: smev3gate-adapter
+      auto-offset-reset: earliest
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      max-poll-records: 1
+      properties:
+        request.timeout.ms: ${SMEV3GATE_ADAPTER_KAFKA_REQUEST_TIMEOUT_MS:360000}
+        max.poll.interval.ms: ${SMEV3GATE_ADAPTER_KAFKA_MAX_POLL_INTERVAL_MS:1800000}
+        max.poll.records: 1
+      enable-auto-commit: false
 
 server:
   port: 8675
   error:
     whitelabel:
       enabled: false
-  max-http-header-size: 400
   connection-timeout: 5s
 
 

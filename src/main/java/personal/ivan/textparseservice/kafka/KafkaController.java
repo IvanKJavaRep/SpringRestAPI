@@ -1,6 +1,10 @@
 package personal.ivan.textparseservice.kafka;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.jms.JmsProperties;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.Acknowledgment;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,8 +19,6 @@ public final class KafkaController {
 
     @GetMapping(value = "/publish")
     public void sendMessageToKafkaTopic(@RequestParam String message) {
-        System.out.println("ggggggggggggg");
         producerService.sendMessage(message);
-
     }
 }

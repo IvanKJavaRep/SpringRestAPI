@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import personal.ivan.textparseservice.dao.entity.MyTableEntity;
-import personal.ivan.textparseservice.kafka.ProducerService;
 import personal.ivan.textparseservice.restapi.dto.MyDTO;
 import personal.ivan.textparseservice.service.MyTableService;
 
