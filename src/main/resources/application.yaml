@@ -34,7 +34,7 @@ spring:
       idle-event-interval: 1m
     consumer:
       group-id: smev3gate-adapter
-      auto-offset-reset: earliest
+      auto-offset-reset: latest
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       max-poll-records: 1
