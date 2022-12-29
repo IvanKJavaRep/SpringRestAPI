@@ -24,6 +24,10 @@ spring:
     add-mappings: false
 
 
+job:
+  schedules: ${MY_TABLE_SERVICE_JOB_SCHEDULES:10000}
+  cron:
+    "0 0 23 * * *"
 server:
   port: 8675
   error:

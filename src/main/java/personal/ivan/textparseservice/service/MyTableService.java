@@ -58,7 +58,6 @@ public class MyTableService {
             return myTableDao.get(53);
         }*/
     }
-
     @Transactional
     public void transactionFail() {
         myTableDao.updateAddress(21, "new address");
@@ -67,7 +66,6 @@ public class MyTableService {
         myTableDao.get(23);
 
     }
-
     @Transactional
     public void transaction() {
         //обе команды сработают без исключений и транзакция пройдет
