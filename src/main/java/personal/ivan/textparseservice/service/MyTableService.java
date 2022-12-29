@@ -28,9 +28,36 @@ public class MyTableService {
     }
 
     public MyTableEntity getEntity(int id) {
-        return myTableDao.get(id);
+        try {
+            myTableDao.deleteById(27);
+        } catch (Exception ex) {
+        }
+        if (id % 2 == 0) {
+            return myTableDao.get(id);
+        }
+        // при 47 положит в кэш и при вызове с id=53 мы быстро его достанем
+        // если еще раз вызовем с 47, то put положит еще одной значение в кэш
+        if (id == 47) {
+            return myTableDao.getWithCachePutCondition(id);
+        } else {
+            return myTableDao.get(47);
+        }
+        /*try {
+            myTableDao.deleteById(27);
+        } catch (Exception ex) {
+        }
+        if (id % 2 == 0) {
+            return myTableDao.get(id);
+        }
+        // при 53 не положит в кэш, но достанет из БД, если еще раз вызовем с 53, то опять из БД
+        // если вызовем с id=47, то метод гет полезет опять в БД,
+        // так как при condition==false мы не кэшируем
+        if (id == 53) {
+            return myTableDao.getWithCachePutCondition(id);
+        } else {
+            return myTableDao.get(53);
+        }*/
     }
-
     @Transactional
     public void transactionFail() {
         myTableDao.updateAddress(21, "new address");
@@ -39,7 +66,6 @@ public class MyTableService {
         myTableDao.get(23);
 
     }
-
     @Transactional
     public void transaction() {
         //обе команды сработают без исключений и транзакция пройдет

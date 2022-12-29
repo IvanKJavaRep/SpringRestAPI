@@ -43,15 +43,14 @@ public class MyTableEntity implements Serializable {
 
 
     public MyTableEntity(int id, String name, String address, Timestamp creation, Timestamp update, String status) {
-
         super();
-        System.out.println(status);
         this.id = id;
         this.name = name;
         this.address = address;
         this.status = Status.valueOf(status);
         creationTime = creation;
         updateTime = update;
+
     }
 
     @PrePersist
