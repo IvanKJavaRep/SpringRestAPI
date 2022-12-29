@@ -47,7 +47,7 @@ public class MyTableEntity implements Serializable {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.status = status;
+        this.status = Status.valueOf(status);
         creationTime = creation;
         updateTime = update;
 
