@@ -1,0 +1,72 @@
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))  2022-12-02 FRIDAY 12:58:51.787884500 120
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-02 FRIDAY 12:58:53.544594700 51
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-02 FRIDAY 12:58:54.212332900 85
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 23
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-02 FRIDAY 12:58:57.441231900 66
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 23
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-02 FRIDAY 12:58:57.846393300 53
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 23
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-02 FRIDAY 12:58:58.384792900 54
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 23
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-02 FRIDAY 12:58:58.867498900 54
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 23
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-02 FRIDAY 12:58:59.239453800 49
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 23
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-02 FRIDAY 12:58:59.615910500 75
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-02 FRIDAY 12:59:03.802671100 68
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-02 FRIDAY 12:59:04.234314800 49
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-02 FRIDAY 12:59:06.775695 73
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 58WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))  2022-12-15 THURSDAY 10:48:51.862764100 258
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 80WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))  2022-12-15 THURSDAY 10:49:06.714267500 106
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 80method finished execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int)) 2022-12-15 THURSDAY 10:50:35.995483400 60
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))  2022-12-15 THURSDAY 10:50:42.694130800 104
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))  2022-12-15 THURSDAY 10:52:24.693222600 278
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 444
+WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))  2022-12-15 THURSDAY 10:52:29.890019 122
+
+Method invoked execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))
+log exception with args: 444
+WARNING execution(MyTableEntity personal.ivan.textparseservice.restapi.controller.MyController.getMyData(int))  2022-12-15 THURSDAY 10:52:31.833373900 117
+
+Method invoked execution(void personal.ivan.textparseservice.restapi.controller.MyController.putMyData(int))
+log exception with args: 19
+WARNING execution(void personal.ivan.textparseservice.restapi.controller.MyController.putMyData(int))  2022-12-15 THURSDAY 10:54:26.524597500 253
+
+Method invoked execution(void personal.ivan.textparseservice.restapi.controller.MyController.putMyData(int))
+WARNING execution(void personal.ivan.textparseservice.restapi.controller.MyController.putMyData(int))  2022-12-15 THURSDAY 10:54:34.119293700 238
+
