@@ -1,25 +1,25 @@
 package personal.ivan.textparseservice.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import personal.ivan.textparseservice.dao.entity.MyTableEntity;
-import personal.ivan.textparseservice.dao.entity.UsersTableEntity;
 
+import java.sql.ResultSet;
+import java.sql.Timestamp;
+import java.util.Collection;
 import java.util.List;
 
 @Repository
 public interface IMyDTORepository extends JpaRepository<MyTableEntity, Integer> {
 
-
-    public List<MyTableEntity> findByidLessThanEqual(Integer id);
-
-    @Query(value = "select * from my_table where address = ?1 ", nativeQuery = true)
-    public List<MyTableEntity> findByAddress(String address);
-
-
-    @Query("SELECT myTableEntity from MyTableEntity myTableEntity WHERE myTableEntity.name = ?1"  )
-    public  List<MyTableEntity> findByName(String name);
+    @Transactional
+    @Modifying
+    @Query("from MyTableEntity m WHERE m.updateTime < ?1")
+    public List<MyTableEntity> selectDataBase(Timestamp timestamp);
 
 }
 

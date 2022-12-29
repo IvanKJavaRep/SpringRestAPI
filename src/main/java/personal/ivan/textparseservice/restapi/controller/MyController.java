@@ -26,7 +26,7 @@ public class MyController {
     @RequestMapping(value = "/put", method = RequestMethod.PUT)
     @ResponseBody
     public void putMyData(@RequestParam int id) {
-        myTableService.updateEntity(id, "new address");
+        myTableService.updateEntity(id, "Moscow");
     }
 
 
