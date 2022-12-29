@@ -35,14 +35,15 @@ public class AspectLogger {
             }
             long afterExecution = System.currentTimeMillis();
             long result = afterExecution - beforeExecution;
+            var now = LocalDate.now();
             if (result > 100) {
                 writer.write("WARNING " + joinPoint + " " + " " +
-                        LocalDate.now() + " " + LocalDate.now().getDayOfWeek().toString()
+                        now + " " + now.getDayOfWeek().toString()
                         + " " + LocalTime.now().toString()
                         + " " + result + "\n\n");
             } else {
                 writer.write("method finished " + joinPoint + " " +
-                        LocalDate.now() + " " + LocalDate.now().getDayOfWeek().toString()
+                        now + " " + now.getDayOfWeek().toString()
                         + " " + LocalTime.now().toString()
                         + " " + result + "\n\n");
             }
