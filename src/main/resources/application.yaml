@@ -22,7 +22,28 @@ spring:
     throw-exception-if-no-handler-found: true
   resources:
     add-mappings: false
-
+  kafka:
+    bootstrap-servers: ${SMEV3GATE_ADAPTER_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      properties:
+        delivery.timeout.ms: ${SMEV3GATE_ADAPTER_KAFKA_DELIVERY_TIMEOUT_MS:120000}
+        max.request.size: ${SMEV3GATE_ADAPTER_KAFKA_PRODUCER_MAX_REQUEST_SIZE_BYTES:73400320}
+        max.request.size.bytes: ${SMEV3GATE_ADAPTER_KAFKA_PRODUCER_MAX_REQUEST_SIZE_BYTES:73400320}
+    listener:
+      ack-mode: manual_immediate
+      idle-event-interval: 1m
+    consumer:
+      group-id: smev3gate-adapter
+      auto-offset-reset: latest
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      max-poll-records: 1
+      properties:
+        request.timeout.ms: ${SMEV3GATE_ADAPTER_KAFKA_REQUEST_TIMEOUT_MS:360000}
+        max.poll.interval.ms: ${SMEV3GATE_ADAPTER_KAFKA_MAX_POLL_INTERVAL_MS:1800000}
+        max.poll.records: 1
+        log.retention.ms: 1000
+      enable-auto-commit: false
 
 job:
   schedules: ${MY_TABLE_SERVICE_JOB_SCHEDULES:10000}
@@ -33,8 +54,6 @@ server:
   error:
     whitelabel:
       enabled: false
-  max-http-header-size: 400
   connection-timeout: 5s
-
 
 

@@ -20,6 +20,7 @@ public class MyController {
     MyTableDao myTableDao;
 
 
+
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @ResponseBody
     public MyTableEntity getMyData(@PathVariable int id) {
