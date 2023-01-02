@@ -29,7 +29,8 @@ public final class ProducerService {
 
             @Override
             public void onSuccess(SendResult<String, String> result) {
-                logger.info("Sent message=[ {} ] with offset=[ {} ]", message, result.getRecordMetadata().offset());
+                logger.info("Sent message=[ {} ] with offset=[ {} ]", message, result.getRecordMetadata().offset(),
+                        result.getRecordMetadata().partition(), result.getRecordMetadata().topic());
             }
         });
     }
