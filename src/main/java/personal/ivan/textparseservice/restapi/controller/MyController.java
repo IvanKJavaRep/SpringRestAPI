@@ -16,7 +16,6 @@ public class MyController {
     MyTableService myTableService;
 
 
-
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @ResponseBody
     public MyTableEntity getMyData(@PathVariable int id) {

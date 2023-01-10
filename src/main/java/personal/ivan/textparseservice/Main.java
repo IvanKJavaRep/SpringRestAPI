@@ -40,11 +40,6 @@ public class Main implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        //repo.save(new MyDTO());
-        //repo.save(new MyDTO());
-        //repo.deleteById(10);
-       /* MyDTO myDTO = new MyDTO();
-        ObjectMapper mapper = new ObjectMapper();
-        System.out.println(mapper.writeValueAsString(myDTO));*/
+
     }
 }
